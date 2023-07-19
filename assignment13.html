@@ -5,51 +5,6 @@
     <meta charset="UTF-8">
     <title>Assignment 12</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <canvas id="canvas1" height="100" width="100">
-        Your browser does not support HTML5 Canvas.
-    </canvas>
-    
-    <script>
-
-        var line = document.getElementById("canvas1");
-        var ctx = canvas.getContext("2d");
-        ctx.fillStyle = 'white';
-        ctx.moveTo(0, 0);
-        ctx.lineTo(100, 0);
-        ctx.stroke();
-
-    </script>
-
-    <canvas id="canvas2" height="200" width="200">
-        Your browser does not support HTML5 Canvas.
-    </canvas>
-
-    <script>
-
-        var curve = document.getElementById("canvas2");
-        var ctx = canvas.getContext("2d");
-        ctx.beingPath();
-        ctx.fillStyle = 'green';
-        ctx.arc(100, 50, 50, 0, Math.PI);
-        ctx.stroke();
-
-    </script>
-
-    <canvas id="canvas3" height="75" width="75">
-        Your browser does not support HTML5 Canvas.
-    </canvas>
-
-    <script>
-
-        var square = document.getElementById("canvas2");
-        var ctx = canvas.getContext("2d");
-        ctx.beingPath();
-        ctx.fillStyle = 'green';
-        ctx.arc(100, 50, 50, 0, Math.PI);
-        ctx.stroke();
-
-    </script>
 </head>
 
 <body>
@@ -64,6 +19,51 @@
 
     <script>
         document.getElementById("Date").innerHTML = Date();
+    </script>
+
+    <canvas id="canvas1" width="100" height="100">
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+
+    <script>
+
+        var line = document.getElementById("canvas1");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = 'white';
+        ctx.moveTo(0, 0);
+        ctx.lineTo(100, 0);
+        ctx.stroke();
+
+    </script>
+
+    <canvas id="canvas2" width="200" height="200">
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+
+    <script>
+
+        var curve = document.getElementById("canvas2");
+        var ctx = canvas.getContext("2d");
+        ctx.beingPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(100, 50, 50, 0, Math.PI);
+        ctx.stroke();
+
+    </script>
+
+    <canvas id="canvas3" width="75" height="75">
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+
+    <script>
+
+        var square = document.getElementById("canvas3");
+        var ctx = canvas.getContext("2d");
+        ctx.beingPath();
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(10, 10, 20, 20);
+        ctx.closePath();
+
     </script>
 
     <p>In this lesson, I learned about JavaScript and how it is used in conjunction with HTML and CSS to build webpages. I
