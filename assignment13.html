@@ -21,6 +21,35 @@
         document.getElementById("Date").innerHTML = Date();
     </script>
 
+    <canvas id="canvas1" height="100" width="100">
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+    
+    <script>
+
+        var line = document.getElementById("canvas1");
+        var ctx = canvas.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(100, 0);
+        ctx.stroke();
+
+    </script>
+
+    <canvas id="canvas2" height="150" width="150">
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+
+    <script>
+
+        var curve = document.getElementById("canvas2");
+        var ctx = canvas.getContext("2d");
+        ctx.beingPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(100, 50, 50, 0, Math.PI);
+        ctx.stroke();
+
+    </script>
+
     <p>In this lesson, I learned about JavaScript and how it is used in conjunction with HTML and CSS to build webpages. I
         learned how certain tags can be edited by using specific phrases and by including an ID for the tag. I also learned
         how to add buttons to a webpage with JavaScript. Another thing I learned was using the canvas tag to draw things on
