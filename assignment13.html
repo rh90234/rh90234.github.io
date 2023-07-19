@@ -5,21 +5,6 @@
     <meta charset="UTF-8">
     <title>Assignment 12</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-    <h1>Assignment 13</h1>
-    <p id="Hello"></p>
-
-    <script>
-        document.getElementById("Hello").innerHTML = "Hello Huzaifa!";
-    </script>
-
-    <p id="Date"></p>
-
-    <script>
-        document.getElementById("Date").innerHTML = Date();
-    </script>
 
     <canvas id="canvas1" height="100" width="100">
         Your browser does not support HTML5 Canvas.
@@ -29,8 +14,8 @@
 
         var line = document.getElementById("canvas1");
         var ctx = canvas.getContext("2d");
-        ctx.moveTo(0, 0);
         ctx.fillStyle = 'white';
+        ctx.moveTo(0, 0);
         ctx.lineTo(100, 0);
         ctx.stroke();
 
@@ -49,6 +34,36 @@
         ctx.arc(100, 50, 50, 0, Math.PI);
         ctx.stroke();
 
+    </script>
+
+    <canvas id="canvas3" height="75" width="75">
+        Your browser does not support HTML5 Canvas.
+    </canvas>
+
+    <script>
+
+        var square = document.getElementById("canvas2");
+        var ctx = canvas.getContext("2d");
+        ctx.beingPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(100, 50, 50, 0, Math.PI);
+        ctx.stroke();
+
+    </script>
+</head>
+
+<body>
+    <h1>Assignment 13</h1>
+    <p id="Hello"></p>
+
+    <script>
+        document.getElementById("Hello").innerHTML = "Hello Huzaifa!";
+    </script>
+
+    <p id="Date"></p>
+
+    <script>
+        document.getElementById("Date").innerHTML = Date();
     </script>
 
     <p>In this lesson, I learned about JavaScript and how it is used in conjunction with HTML and CSS to build webpages. I
