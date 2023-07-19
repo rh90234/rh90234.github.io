@@ -29,6 +29,7 @@
 
         var line = document.getElementById("canvas1");
         var ctx = canvas.getContext("2d");
+        
         ctx.fillStyle = 'white';
         ctx.moveTo(0, 0);
         ctx.lineTo(100, 0);
@@ -44,6 +45,7 @@
 
         var curve = document.getElementById("canvas2");
         var ctx = canvas.getContext("2d");
+
         ctx.beingPath();
         ctx.fillStyle = 'green';
         ctx.arc(100, 50, 50, 0, Math.PI);
@@ -59,6 +61,7 @@
 
         var square = document.getElementById("canvas3");
         var ctx = canvas.getContext("2d");
+
         ctx.beingPath();
         ctx.fillStyle = 'blue';
         ctx.fillRect(10, 10, 20, 20);
