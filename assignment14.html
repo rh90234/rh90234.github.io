@@ -11,24 +11,55 @@
     <h1>Assignment 14</h1>
 
     <p>SELECT * FROM Customers;
-        SELECT CustomerID, CustomerName FROM Customers;<br>
-        SELECT CustomerName, Address, City, PostalCode FROM Customers WHERE Country = 'United Kingdom'<br>
-        SELECT ContactName, CustomerName FROM Customers ORDER BY ContactName;<br>
-        SELECT (COUNT(*)) FROM Customers;<br>
-        SELECT Country, (COUNT(*)) FROM Customers GROUP BY Country;<br>
-        SELECT Country, (COUNT(*)) FROM Customers GROUP BY Country ORDER BY (COUNT(*)) DESC, Country;<br>
-        SELECT Country, (COUNT(*)) FROM Customers GROUP BY Country HAVING (COUNT(*)) > 10 ORDER BY (COUNT(*)) DESC, Country;
+        SELECT CustomerID, CustomerName
+        FROM Customers;<br>
+
+        SELECT CustomerName, Address, City, PostalCode
+        FROM Customers
+        WHERE Country = 'United Kingdom'<br>
+
+        SELECT ContactName, CustomerName
+        FROM Customers
+        ORDER BY ContactName;<br>
+
+        SELECT (COUNT(*))
+        FROM Customers;<br>
+
+        SELECT Country, (COUNT(*))
+        FROM Customers
+        GROUP BY Country;<br>
+
+        SELECT Country, (COUNT(*))
+        FROM Customers
+        GROUP BY Country
+        ORDER BY (COUNT(*)) DESC, Country;<br>
+
+        SELECT Country, (COUNT(*))
+        FROM Customers
+        GROUP BY Country HAVING (COUNT(*)) > 10
+        ORDER BY (COUNT(*)) DESC, Country;
     </p>
 
     <p></p>
 
     <p>INSERT INTO Shippers (ShipperID, ShipperName, Phone)
         Values ('4', 'On Time Delivery', '(503) 555-0123');<br>
-        UPDATE Products SET Price = (Price+1);<br>
-        UPDATE Products SET Price = (Price-1);<br>
-        UPDATE Shippers SET ShipperName = 'On-Time Delivery' WHERE ShipperID = 4;</p>
 
-    <p></p>
+        UPDATE Products SET Price = (Price+1);<br>
+
+        UPDATE Products SET Price = (Price-1);<br>
+
+        UPDATE Shippers SET ShipperName = 'On-Time Delivery'
+        WHERE ShipperID = 4;<br>
+
+        DELETE FROM Shippers WHERE ShipperID = 4;</p>
+
+    <p>In this lesson about databases, I learned how data is stored in an organized way by using relational databases with
+    SQL. I also learned how to use write SELECT statements for single-table and multi-table queries. The final thing I
+    learned from the activities in this lesson is using the INSERT, UPDATE, and DELETE queries to make changes to
+    tables. I envision using what I learned in my current education to learn more about databases and SQL. I envision
+    needing to use this skill in the work environment especially in my first years for entry-level jobs in the IT field.
+    I envision taking what I know about databases to work on the security aspect, since data breaches are common.</p>
 
 
 </body>
