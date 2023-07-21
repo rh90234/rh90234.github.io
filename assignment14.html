@@ -50,19 +50,38 @@
         INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;<br>
 
         SELECT Orders.OrderID AS OrderNumber, Orders.OrderDate, Customers.CustomerName
-        FROM Orders
-        INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+        FROM Customers
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
         ORDER BY CustomerName, OrderNumber;<br>
         
-        SELECT Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity
-        FROM ((Orders
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity
+        FROM (((Customers
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
         INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
         INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID);<br>
         
-        SELECT Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, Products.Price, (Products.Price * OrderDetails.Quantity) AS ExtendedPrice, OrderDetails.Quantity
-        FROM ((Orders
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,  
+        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice
+        FROM (((Customers
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
         INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
-        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID);<br></p>
+        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID);<br>
+       
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,  
+        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice
+        FROM (((Customers
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
+        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
+        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID)
+        WHERE Customers.CustomerID = 2;<br>
+        
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,  
+        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice
+        FROM (((Customers
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
+        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
+        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID)
+        WHERE Customers.CustomerName = 'Around the Horn';</p>
 
     <p>INSERT INTO Shippers (ShipperID, ShipperName, Phone)
         Values ('4', 'On Time Delivery', '(503) 555-0123');<br>
