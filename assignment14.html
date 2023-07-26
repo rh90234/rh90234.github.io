@@ -11,90 +11,90 @@
     <h1>Assignment 14</h1>
 
     <h2>Single-Table SELECT Statements</h2>
-    <p>SELECT * FROM Customers;<br>
+    <p>SELECT * FROM Customers;<br><br>
 
-        SELECT CustomerID, CustomerName
-        FROM Customers;<br>
+        SELECT CustomerID, CustomerName<br>
+        FROM Customers;<br><br>
 
-        SELECT CustomerName, Address, City, PostalCode
-        FROM Customers
-        WHERE Country = 'United Kingdom';<br>
+        SELECT CustomerName, Address, City, PostalCode<br>
+        FROM Customers<br>
+        WHERE Country = 'United Kingdom';<br><br>
 
-        SELECT ContactName, CustomerName
-        FROM Customers
-        ORDER BY ContactName;<br>
+        SELECT ContactName, CustomerName<br>
+        FROM Customers<br>
+        ORDER BY ContactName;<br><br>
 
-        SELECT (COUNT(*))
-        FROM Customers;<br>
+        SELECT (COUNT(*))<br>
+        FROM Customers;<br><br>
 
-        SELECT Country, (COUNT(*))
-        FROM Customers
-        GROUP BY Country;<br>
+        SELECT Country, (COUNT(*))<br>
+        FROM Customers<br>
+        GROUP BY Country;<br><br>
 
-        SELECT Country, (COUNT(*))
-        FROM Customers
-        GROUP BY Country
-        ORDER BY (COUNT(*)) DESC, Country;<br>
+        SELECT Country, (COUNT(*))<br>
+        FROM Customers<br>
+        GROUP BY Country<br>
+        ORDER BY (COUNT(*)) DESC, Country;<br><br>
 
-        SELECT Country, (COUNT(*))
-        FROM Customers
-        GROUP BY Country HAVING (COUNT(*)) > 10
+        SELECT Country, (COUNT(*))<br>
+        FROM Customers<br>
+        GROUP BY Country HAVING (COUNT(*)) > 10<br>
         ORDER BY (COUNT(*)) DESC, Country;
     </p>
 
     <h2>Multiple-Table SELECT Statements</h2>
-    <p>SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
-        FROM Orders
-        INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;<br>
+    <p>SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName<br>
+        FROM Orders<br>
+        INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;<br><br>
 
-        SELECT Orders.OrderID AS OrderNumber, Orders.OrderDate, Customers.CustomerName
-        FROM Orders
-        INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;<br>
+        SELECT Orders.OrderID AS OrderNumber, Orders.OrderDate, Customers.CustomerName<br>
+        FROM Orders<br>
+        INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;<br><br>
 
-        SELECT Orders.OrderID AS OrderNumber, Orders.OrderDate, Customers.CustomerName
-        FROM Customers
-        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
-        ORDER BY CustomerName, OrderNumber;<br>
+        SELECT Orders.OrderID AS OrderNumber, Orders.OrderDate, Customers.CustomerName<br>
+        FROM Customers<br>
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID<br>
+        ORDER BY CustomerName, OrderNumber;<br><br>
         
-        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity
-        FROM (((Customers
-        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
-        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
-        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID);<br>
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity<br>
+        FROM (((Customers<br>
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)<br>
+        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)<br>
+        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID);<br><br>
         
-        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,  
-        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice
-        FROM (((Customers
-        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
-        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
-        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID);<br>
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,<br>
+        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice<br>
+        FROM (((Customers<br>
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)<br>
+        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)<br>
+        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID);<br><br>
        
-        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,  
-        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice
-        FROM (((Customers
-        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
-        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
-        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID)
-        WHERE Customers.CustomerID = 2;<br>
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,<br>
+        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice<br>
+        FROM (((Customers<br>
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)<br>
+        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)<br>
+        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID)<br>
+        WHERE Customers.CustomerID = 2;<br><br>
         
-        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,  
-        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice
-        FROM (((Customers
-        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
-        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)
-        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID)
+        SELECT Customers.CustomerID, Orders.OrderID AS OrderNumber, Orders.OrderDate, Products.ProductName, OrderDetails.Quantity,<br>
+        (Products.Price * OrderDetails.Quantity) AS ExtendedPrice<br>
+        FROM (((Customers<br>
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)<br>
+        INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID)<br>
+        INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID)<br>
         WHERE Customers.CustomerName = 'Around the Horn';</p>
 
     <h2>INSERT, UPDATE, and DELETE Statements</h2>
-    <p>INSERT INTO Shippers (ShipperID, ShipperName, Phone)
-        Values ('4', 'On Time Delivery', '(503) 555-0123');<br>
+    <p>INSERT INTO Shippers (ShipperID, ShipperName, Phone)<br>
+        Values ('4', 'On Time Delivery', '(503) 555-0123');<br><br>
 
-        UPDATE Products SET Price = (Price+1);<br>
+        UPDATE Products SET Price = (Price+1);<br><br>
 
-        UPDATE Products SET Price = (Price-1);<br>
+        UPDATE Products SET Price = (Price-1);<br><br>
 
-        UPDATE Shippers SET ShipperName = 'On-Time Delivery'
-        WHERE ShipperID = 4;<br>
+        UPDATE Shippers SET ShipperName = 'On-Time Delivery'<br>
+        WHERE ShipperID = 4;<br><br>
 
         DELETE FROM Shippers WHERE ShipperID = 4;</p>
 
